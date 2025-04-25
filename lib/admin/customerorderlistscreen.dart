@@ -7,6 +7,20 @@ import 'package:garcon/presentation/widgets/home_components.dart';
 class CustomerOrderListScreen extends StatelessWidget {
   const CustomerOrderListScreen({Key? key}) : super(key: key);
 
+  // Function to update the reservation status
+  Future<void> updateReservationStatus(
+      String reservationId, String newStatus) async {
+    try {
+      await FirebaseFirestore.instance
+          .collection('reservations')
+          .doc(reservationId)
+          .update({'status': newStatus});
+      print('Reservation status updated to $newStatus');
+    } catch (e) {
+      print('Error updating reservation status: $e');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,22 +60,52 @@ class CustomerOrderListScreen extends StatelessWidget {
             itemCount: reservations.length,
             itemBuilder: (context, index) {
               final res = reservations[index];
+              final docId = snapshot.data!.docs[index].id;
+
               return Card(
                 margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                 elevation: 4,
-                child: ListTile(
-                  title: Text('${res.name} • ${res.restaurant}'),
-                  subtitle: Column(
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      Text('${res.name} • ${res.restaurant}',
+                          style: const TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.bold)),
+                      const SizedBox(height: 8),
                       Text('Date: ${res.date} at ${res.time}'),
                       Text('Branch: ${res.branch}'),
                       Text('People: ${res.personsNumber}'),
                       Text('Amount: ₹${res.amount}'),
                       Text('User ID: ${res.userId}'),
+                      const SizedBox(height: 8),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text('Status: ${res.status}',
+                              style:
+                                  const TextStyle(fontWeight: FontWeight.bold)),
+                          ElevatedButton(
+                            onPressed: () {
+                              final newStatus = res.status == 'Pending'
+                                  ? 'Accepted'
+                                  : 'Pending';
+                              updateReservationStatus(docId, newStatus);
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: res.status == 'Accepted'
+                                  ? Colors.green
+                                  : Colors.red,
+                            ),
+                            child: Text(res.status == 'Accepted'
+                                ? 'Mark as Pending'
+                                : 'Mark as Accepted'),
+                          ),
+                        ],
+                      ),
                     ],
                   ),
-                  isThreeLine: true,
                 ),
               );
             },
