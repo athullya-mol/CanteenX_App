@@ -1,0 +1,2 @@
+C:/Users/athul/Downloads/garcon-restaurants-ecommerce-master/garcon-restaurants-ecommerce-master/android/app/.cxx/Debug/27gl6u15/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Users/athul/Downloads/garcon-restaurants-ecommerce-master/garcon-restaurants-ecommerce-master/android/app/.cxx/Debug/27gl6u15/armeabi-v7a/CMakeFiles/rebuild_cache.dir

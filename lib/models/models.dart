@@ -1,0 +1,9 @@
+export 'user.dart';
+export 'restaurant.dart';
+export 'tag.dart';
+export 'pickup.dart';
+export 'reservation.dart';
+export 'about_us.dart';
+export 'pickupsorder.dart';
+export 'info.dart';
+export 'contact_us.dart';
