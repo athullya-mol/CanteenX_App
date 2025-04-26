@@ -1,4 +1,4 @@
-import 'package:CanteenX/core/router/router.dart';
+import 'package:CanteenX/admin/feedbackadmin.dart';
 import 'package:CanteenX/presentation/screens/choose.dart';
 import 'package:CanteenX/presentation/widgets/home_components.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -77,10 +77,18 @@ class SalesReportScreen extends StatelessWidget {
         },
       ),
       floatingActionButton: FloatingActionButton(
-          child: const Icon(Icons.message),
-          onPressed: () {
-            Navigator.of(context).pushNamed(AppRouter.adminfeed);
-          }),
+        onPressed: () {
+          showModalBottomSheet(
+            context: context,
+            isScrollControlled: true,
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+            ),
+            builder: (_) => const FeedbackAdminPanel(),
+          );
+        },
+        child: const Icon(Icons.chat),
+      ),
     );
   }
 }

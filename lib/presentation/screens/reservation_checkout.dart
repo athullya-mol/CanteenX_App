@@ -175,8 +175,7 @@ class ReservationCheckoutScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              reservationAmountColumn(
-                  reservation.amount, reservation.personsNumber as int),
+              reservationAmountColumn("25", 0),
               //  Space.y!,
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
