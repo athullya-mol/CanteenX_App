@@ -1,7 +1,9 @@
+import 'package:CanteenX/configs/app_dimensions.dart';
+import 'package:CanteenX/configs/app_typography.dart';
+import 'package:CanteenX/configs/space.dart';
+import 'package:CanteenX/core/constants/colors.dart';
+import 'package:CanteenX/presentation/widgets/custom_buttons.dart';
 import 'package:flutter/material.dart';
-import 'package:garcon/configs/configs.dart';
-import 'package:garcon/core/core.dart';
-import 'package:garcon/presentation/widgets.dart';
 
 Future<void> customDialog(
   BuildContext context, {

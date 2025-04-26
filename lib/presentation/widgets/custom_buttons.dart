@@ -1,5 +1,5 @@
+import 'package:CanteenX/configs/app_dimensions.dart';
 import 'package:flutter/material.dart';
-import 'package:garcon/configs/app_dimensions.dart';
 
 Widget customElevatedButton(
     {required double width,

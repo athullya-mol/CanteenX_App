@@ -1,8 +1,11 @@
+import 'package:CanteenX/configs/app_dimensions.dart';
+import 'package:CanteenX/configs/app_typography.dart';
+import 'package:CanteenX/configs/space.dart';
+import 'package:CanteenX/presentation/widgets/custom_buttons.dart';
+import 'package:CanteenX/presentation/widgets/settings_components.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:garcon/configs/configs.dart';
-import 'package:garcon/presentation/widgets.dart';
 
 import '../../application/application.dart';
 import '../../core/core.dart';
@@ -117,5 +120,3 @@ class SettingsScreen extends StatelessWidget {
     );
   }
 }
-
-

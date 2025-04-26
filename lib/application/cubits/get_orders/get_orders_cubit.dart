@@ -1,8 +1,7 @@
+import 'package:CanteenX/models/pickupsorder.dart';
+import 'package:CanteenX/repositories/orders/orders_repo.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:garcon/models/pickupsorder.dart';
-
-import 'package:garcon/repositories/repositories.dart';
 
 part 'get_orders_state.dart';
 

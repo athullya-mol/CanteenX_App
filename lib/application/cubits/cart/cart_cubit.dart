@@ -1,9 +1,9 @@
 import 'dart:async';
 
+import 'package:CanteenX/models/pickup.dart';
+import 'package:CanteenX/repositories/cart/cart_repo.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:garcon/models/models.dart';
-import 'package:garcon/repositories/repositories.dart';
 
 part 'cart_state.dart';
 

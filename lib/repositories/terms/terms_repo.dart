@@ -1,5 +1,5 @@
+import 'package:CanteenX/models/info.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:garcon/models/models.dart';
 part  'base_terms_repo.dart';
 class TermsRepository extends BaseTermsRepository {
   final FirebaseFirestore _firebaseFirestore;

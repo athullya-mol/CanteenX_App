@@ -1,4 +1,4 @@
-name: garcon
+name: CanteenX
 description: A new Flutter project.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -52,6 +52,7 @@ dependencies:
   url_launcher: null
 
 dev_dependencies:
+  flutter_launcher_icons: ^0.14.3
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -89,6 +90,7 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
+
   fonts:
     - family: Cairo
       fonts:
@@ -96,6 +98,13 @@ flutter:
           weight: 900
         - asset: assets/fonts/Cairo-Regular.ttf
           weight: 500
+  
+
+flutter_launcher_icons:
+  android: "canteenx"
+  ios: true
+  image_path: "assets/png/logo.png"
+  min_sdk_android: 21 
   # fonts:
   #   - family: Schyler
   #     fonts:

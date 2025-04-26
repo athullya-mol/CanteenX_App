@@ -1,6 +1,7 @@
+import 'package:CanteenX/configs/app_dimensions.dart';
+import 'package:CanteenX/configs/space.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
-import 'package:garcon/configs/configs.dart';
 
 Widget dotsIndicator(
     {required double dotsIndex,

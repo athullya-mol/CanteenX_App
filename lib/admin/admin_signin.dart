@@ -1,8 +1,11 @@
+import 'package:CanteenX/application/cubits/navigation_cubit/admin_navigation_cubit.dart';
+import 'package:CanteenX/presentation/widgets/custom_appbar.dart';
+import 'package:CanteenX/presentation/widgets/custom_buttons.dart';
+import 'package:CanteenX/presentation/widgets/custom_dialog.dart';
+import 'package:CanteenX/presentation/widgets/custom_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:garcon/application/cubits/navigation_cubit/admin_navigation_cubit.dart';
-import 'package:garcon/presentation/widgets.dart';
 
 import '../../configs/configs.dart';
 import '../../core/core.dart';

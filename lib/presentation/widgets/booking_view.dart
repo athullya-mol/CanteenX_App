@@ -1,9 +1,15 @@
+import 'package:CanteenX/configs/app_dimensions.dart';
+import 'package:CanteenX/configs/app_typography.dart';
+import 'package:CanteenX/configs/space.dart';
+import 'package:CanteenX/core/constants/colors.dart';
+import 'package:CanteenX/core/router/router.dart';
+import 'package:CanteenX/models/reservation.dart';
+import 'package:CanteenX/models/restaurant.dart';
+import 'package:CanteenX/presentation/widgets/custom_buttons.dart';
+import 'package:CanteenX/presentation/widgets/custom_textfield.dart';
+import 'package:CanteenX/presentation/widgets/restaurant_components.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:garcon/configs/configs.dart';
-import 'package:garcon/core/core.dart';
-import 'package:garcon/models/models.dart';
-import 'package:garcon/presentation/widgets.dart';
 
 class BookingView extends StatefulWidget {
   const BookingView({
@@ -20,7 +26,7 @@ class BookingView extends StatefulWidget {
 class _BookingViewState extends State<BookingView> {
   final TextEditingController _nameController = TextEditingController();
   List<String> dropDownItems = [];
-  String dropDownValue = "Select Branch";
+  String dropDownValue = "Select Counter";
   DateTime selectedDate = DateTime.now();
   TimeOfDay selectedTime = TimeOfDay.now();
   int numberOfPersons = 1;
@@ -53,7 +59,7 @@ class _BookingViewState extends State<BookingView> {
 
   @override
   void initState() {
-    dropDownItems = ["Select Branch", ...widget.restaurant.branches];
+    dropDownItems = ["Select Counter", ...widget.restaurant.branches];
     super.initState();
   }
 
@@ -81,7 +87,7 @@ class _BookingViewState extends State<BookingView> {
                   labelText: "Type here", controller: _nameController),
               Space.yf(1.5),
               Text(
-                "Restaurant Branch",
+                "Canteen Counter",
                 style: AppText.b1b,
               ),
               Space.yf(.5),

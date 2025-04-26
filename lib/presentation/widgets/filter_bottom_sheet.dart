@@ -1,8 +1,9 @@
+import 'package:CanteenX/application/blocs/tags/tags_bloc.dart';
+import 'package:CanteenX/core/constants/colors.dart';
+import 'package:CanteenX/presentation/widgets/custom_buttons.dart';
+import 'package:CanteenX/presentation/widgets/filter_components.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:garcon/application/application.dart';
-import 'package:garcon/core/core.dart';
-import 'package:garcon/presentation/widgets.dart';
 
 import '../../configs/configs.dart';
 

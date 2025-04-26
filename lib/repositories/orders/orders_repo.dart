@@ -1,5 +1,5 @@
+import 'package:CanteenX/models/pickupsorder.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:garcon/models/models.dart';
 
 part 'base_orders_repo.dart';
 

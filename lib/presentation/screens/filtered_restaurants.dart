@@ -1,9 +1,11 @@
+import 'package:CanteenX/application/cubits/filter/filter_cubit.dart';
+import 'package:CanteenX/application/cubits/select_tag/select_tag_cubit.dart';
+import 'package:CanteenX/configs/space.dart';
+import 'package:CanteenX/presentation/widgets/custom_appbar.dart';
+import 'package:CanteenX/presentation/widgets/vertical_restaurant_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:garcon/application/application.dart';
-import 'package:garcon/configs/space.dart';
-import 'package:garcon/core/core.dart';
-import 'package:garcon/presentation/widgets.dart';
+import 'package:CanteenX/core/extensions/extensions.dart';
 
 class FilteredRestaurantsScreen extends StatelessWidget {
   const FilteredRestaurantsScreen({super.key});
@@ -17,7 +19,8 @@ class FilteredRestaurantsScreen extends StatelessWidget {
               context: context,
               title: (selectedState.selectedTag == null)
                   ? ""
-                  : StringCapitalizeExtension(selectedState.selectedTag!.name).capitalize()),
+                  : StringCapitalizeExtension(selectedState.selectedTag!.name)
+                      .capitalize()),
           body: BlocBuilder<FilterCubit, FilterState>(
             builder: (context, state) {
               if (state.filteredRestaurants.isEmpty) {

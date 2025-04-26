@@ -1,8 +1,10 @@
+import 'package:CanteenX/configs/app_dimensions.dart';
+import 'package:CanteenX/core/constants/assets.dart';
+import 'package:CanteenX/core/constants/colors.dart';
+import 'package:CanteenX/core/router/router.dart';
+import 'package:CanteenX/presentation/widgets/choose_stack.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:garcon/configs/configs.dart';
-import 'package:garcon/core/core.dart';
-import 'package:garcon/presentation/widgets.dart';
 
 class ChooseScreen extends StatelessWidget {
   const ChooseScreen({super.key});

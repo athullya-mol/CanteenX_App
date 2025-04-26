@@ -1,11 +1,16 @@
+import 'package:CanteenX/application/blocs/user/user_bloc.dart';
+import 'package:CanteenX/configs/app_dimensions.dart';
+import 'package:CanteenX/configs/app_typography.dart';
+import 'package:CanteenX/configs/space.dart';
+import 'package:CanteenX/core/constants/colors.dart';
+import 'package:CanteenX/core/router/router.dart';
+import 'package:CanteenX/presentation/widgets/account_row.dart';
+import 'package:CanteenX/presentation/widgets/custom_appbar.dart';
 import 'package:flag/flag_enum.dart';
 import 'package:flag/flag_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:garcon/application/application.dart';
-import 'package:garcon/configs/configs.dart';
-import 'package:garcon/core/core.dart';
-import 'package:garcon/presentation/widgets.dart';
+import 'package:CanteenX/core/extensions/extensions.dart';
 
 class AccountScreen extends StatelessWidget {
   const AccountScreen({super.key});
@@ -65,6 +70,17 @@ class AccountScreen extends StatelessWidget {
                       onTap: () {
                         Navigator.of(context)
                             .pushNamed(AppRouter.changePassword);
+                      }),
+                  Space.y!,
+                  Divider(
+                    // ignore: deprecated_member_use
+                    color: AppColors.greyColor.withOpacity(.4),
+                  ),
+                  Space.y!,
+                  accountRow(
+                      title: "Feedback",
+                      onTap: () {
+                        Navigator.of(context).pushNamed(AppRouter.userfeed);
                       }),
                 ],
               ),

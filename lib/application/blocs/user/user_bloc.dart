@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'dart:developer';
+import 'package:CanteenX/application/blocs/auth/auth_bloc.dart';
+import 'package:CanteenX/models/user.dart';
+import 'package:CanteenX/repositories/user_repos/user_repo.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:garcon/application/application.dart';
-import 'package:garcon/repositories/repositories.dart';
-import 'package:garcon/models/models.dart';
 import '../../../core/core.dart';
 
 part 'user_event.dart';

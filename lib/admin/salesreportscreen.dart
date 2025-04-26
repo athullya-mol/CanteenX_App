@@ -1,7 +1,8 @@
+import 'package:CanteenX/core/router/router.dart';
+import 'package:CanteenX/presentation/screens/choose.dart';
+import 'package:CanteenX/presentation/widgets/home_components.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:garcon/presentation/screens/choose.dart';
-import 'package:garcon/presentation/widgets/home_components.dart';
 
 class SalesReportScreen extends StatelessWidget {
   const SalesReportScreen({Key? key}) : super(key: key);
@@ -75,6 +76,11 @@ class SalesReportScreen extends StatelessWidget {
           );
         },
       ),
+      floatingActionButton: FloatingActionButton(
+          child: const Icon(Icons.message),
+          onPressed: () {
+            Navigator.of(context).pushNamed(AppRouter.adminfeed);
+          }),
     );
   }
 }

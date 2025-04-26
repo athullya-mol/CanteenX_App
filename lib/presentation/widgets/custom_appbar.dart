@@ -1,7 +1,10 @@
+import 'package:CanteenX/configs/app_dimensions.dart';
+import 'package:CanteenX/configs/app_typography.dart';
+import 'package:CanteenX/configs/space.dart';
+import 'package:CanteenX/core/constants/assets.dart';
+import 'package:CanteenX/core/extensions/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:garcon/configs/configs.dart';
-import 'package:garcon/core/core.dart';
 
 PreferredSizeWidget customAppBar(
     {required BuildContext context,

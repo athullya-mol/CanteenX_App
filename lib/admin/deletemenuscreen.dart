@@ -1,9 +1,9 @@
+import 'package:CanteenX/core/constants/colors.dart';
+import 'package:CanteenX/presentation/screens/choose.dart';
+import 'package:CanteenX/presentation/widgets/custom_deletedialog.dart';
+import 'package:CanteenX/presentation/widgets/home_components.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:garcon/core/constants/colors.dart';
-import 'package:garcon/presentation/screens/choose.dart';
-import 'package:garcon/presentation/widgets/custom_deletedialog.dart';
-import 'package:garcon/presentation/widgets/home_components.dart';
 
 class DeleteMenuScreen extends StatelessWidget {
   const DeleteMenuScreen({Key? key}) : super(key: key);

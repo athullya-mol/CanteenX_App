@@ -1,8 +1,9 @@
+import 'package:CanteenX/models/restaurant.dart';
+import 'package:CanteenX/presentation/widgets/custom_buttons.dart';
+import 'package:CanteenX/presentation/widgets/pickup_item.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:garcon/models/models.dart';
-import 'package:garcon/presentation/widgets.dart';
 
 import '../../application/application.dart';
 import '../../configs/configs.dart';
@@ -58,8 +59,8 @@ class _PickUpsViewState extends State<PickUpsView> {
                             ? AppColors.deepRed
                             : AppColors.lightGrey,
                         borderRadius: AppDimensions.normalize(6),
-                        text: StringCapitalizeExtension(widget.restaurant.categories[i]
-                            .toString())
+                        text: StringCapitalizeExtension(
+                                widget.restaurant.categories[i].toString())
                             .capitalize(),
                         textStyle: AppText.b2b!.copyWith(
                             color: selectedCategoryIndex == i

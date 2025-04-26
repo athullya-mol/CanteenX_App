@@ -1,13 +1,13 @@
 import 'dart:io';
+import 'package:CanteenX/configs/app_dimensions.dart';
+import 'package:CanteenX/configs/app_typography.dart';
+import 'package:CanteenX/configs/space.dart';
+import 'package:CanteenX/presentation/screens/choose.dart';
+import 'package:CanteenX/presentation/widgets/custom_buttons.dart';
+import 'package:CanteenX/presentation/widgets/home_components.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
-import 'package:garcon/configs/app_dimensions.dart';
-import 'package:garcon/configs/app_typography.dart';
-import 'package:garcon/configs/space.dart';
-import 'package:garcon/presentation/screens/choose.dart';
-import 'package:garcon/presentation/widgets/custom_buttons.dart';
-import 'package:garcon/presentation/widgets/home_components.dart';
 import 'package:image_picker/image_picker.dart';
 
 class AddFoodMenuScreen extends StatefulWidget {

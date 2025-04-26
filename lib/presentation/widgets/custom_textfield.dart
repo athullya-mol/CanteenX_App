@@ -1,5 +1,5 @@
+import 'package:CanteenX/core/constants/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:garcon/core/core.dart';
 
 import '../../configs/configs.dart';
 

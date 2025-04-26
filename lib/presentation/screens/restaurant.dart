@@ -1,12 +1,22 @@
+import 'package:CanteenX/configs/app_dimensions.dart';
+import 'package:CanteenX/configs/app_typography.dart';
+import 'package:CanteenX/configs/space.dart';
+import 'package:CanteenX/core/constants/assets.dart';
+import 'package:CanteenX/core/constants/colors.dart';
+import 'package:CanteenX/core/constants/strings.dart';
+import 'package:CanteenX/core/router/router.dart';
+import 'package:CanteenX/models/restaurant.dart';
+import 'package:CanteenX/presentation/widgets/booking_view.dart';
+import 'package:CanteenX/presentation/widgets/custom_appbar.dart';
+import 'package:CanteenX/presentation/widgets/dots_indicator.dart';
+import 'package:CanteenX/presentation/widgets/home_components.dart';
+import 'package:CanteenX/presentation/widgets/info_view.dart';
+import 'package:CanteenX/presentation/widgets/pickups_notched_container.dart';
+import 'package:CanteenX/presentation/widgets/restaurant_components.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
-import 'package:garcon/configs/configs.dart';
-import 'package:garcon/core/core.dart';
-import 'package:garcon/models/models.dart';
-import 'package:garcon/presentation/widgets.dart';
 
 import '../../application/application.dart';
 
@@ -22,7 +32,7 @@ class RestaurantScreen extends StatefulWidget {
 class _RestaurantScreenState extends State<RestaurantScreen> {
   PageController _pageController = PageController();
   int selectedPageIndex = 1;
-  int selectedTapIndex = 0;  // int selectedCategoryIndex = 0;
+  int selectedTapIndex = 0; // int selectedCategoryIndex = 0;
 
   @override
   void initState() {
@@ -37,9 +47,8 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
   Widget build(BuildContext context) {
     List<Widget> views = [
       BookingView(restaurant: widget.restaurant),
-      PickUpsView(restaurant: widget.restaurant),
       InfoView(restaurant: widget.restaurant),
-    ];
+    ]; // PickUpsView(restaurant: widget.restaurant),
     return Scaffold(
       appBar: customAppBar(
         context: context,
@@ -118,7 +127,7 @@ class _RestaurantScreenState extends State<RestaurantScreen> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        for (var i = 0; i < 3; i++)
+                        for (var i = 0; i < 2; i++)
                           GestureDetector(
                             onTap: () => setState(() => selectedTapIndex = i),
                             child: Column(

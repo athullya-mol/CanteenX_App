@@ -4,7 +4,6 @@ sealed class AppStrings {
       "https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cmVzdGF1cmFudHxlbnwwfHwwfHx8MA%3D%3D";
   static const List<String> restaurantTaps = [
     "Booking",
-    "Pickup",
     "Info",
   ];
 
@@ -20,7 +19,8 @@ sealed class AppStrings {
     "Contact us",
   ];
 
-  static const String gitUrl = "https://www.instagram.com/eaglecode.tech?igsh=dnJtMTBsNnJxMzdi";
+  static const String gitUrl =
+      "https://www.instagram.com/eaglecode.tech?igsh=dnJtMTBsNnJxMzdi";
   static const String linkedUrl = "https://www.linkedin.com/in/mo7amedebaid/";
   static const String garconUrl = "https://github.com/sivaneagle";
 

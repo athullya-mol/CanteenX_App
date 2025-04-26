@@ -1,6 +1,6 @@
+import 'package:CanteenX/repositories/about/about_repo.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:garcon/repositories/repositories.dart';
 import 'package:meta/meta.dart';
 
 import '../../../models/models.dart';

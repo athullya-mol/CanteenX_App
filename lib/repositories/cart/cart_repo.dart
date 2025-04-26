@@ -1,7 +1,7 @@
 import 'dart:async';
 
+import 'package:CanteenX/models/pickup.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:garcon/models/models.dart';
 
 import 'dart:developer';
 
@@ -119,5 +119,4 @@ class CartRepository implements BaseCartRepository {
       // Handle error (e.g., throw an exception, return a specific error message)
     }
   }
-
 }

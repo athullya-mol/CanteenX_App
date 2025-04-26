@@ -1,11 +1,19 @@
+import 'package:CanteenX/application/blocs/auth/auth_bloc.dart';
+import 'package:CanteenX/application/cubits/connectivity/connectivity_cubit.dart';
+import 'package:CanteenX/configs/app.dart';
+import 'package:CanteenX/configs/app_dimensions.dart';
+import 'package:CanteenX/configs/app_typography.dart';
+import 'package:CanteenX/configs/space.dart';
+import 'package:CanteenX/core/constants/assets.dart';
+import 'package:CanteenX/core/constants/colors.dart';
+import 'package:CanteenX/core/constants/strings.dart';
+import 'package:CanteenX/core/enums/enums.dart';
+import 'package:CanteenX/core/router/router.dart';
+import 'package:CanteenX/presentation/widgets/custom_buttons.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:garcon/configs/configs.dart';
-import 'package:garcon/core/core.dart';
-import 'package:garcon/application/application.dart';
-import 'package:garcon/presentation/widgets.dart';
 
 class AdsScreen extends StatefulWidget {
   const AdsScreen({super.key});

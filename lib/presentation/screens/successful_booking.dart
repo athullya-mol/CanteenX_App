@@ -1,9 +1,13 @@
+import 'package:CanteenX/application/cubits/navigation_cubit/navigation_cubit.dart';
+import 'package:CanteenX/configs/app_dimensions.dart';
+import 'package:CanteenX/configs/app_typography.dart';
+import 'package:CanteenX/configs/space.dart';
+import 'package:CanteenX/core/constants/colors.dart';
+import 'package:CanteenX/core/enums/enums.dart';
+import 'package:CanteenX/core/router/router.dart';
+import 'package:CanteenX/presentation/widgets/custom_buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:garcon/application/application.dart';
-import 'package:garcon/configs/configs.dart';
-import 'package:garcon/core/core.dart';
-import 'package:garcon/presentation/widgets.dart';
 
 class SuccessfulBookingScreen extends StatelessWidget {
   const SuccessfulBookingScreen({super.key});

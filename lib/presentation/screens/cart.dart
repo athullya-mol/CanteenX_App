@@ -1,11 +1,19 @@
+import 'package:CanteenX/application/cubits/cart/cart_cubit.dart';
+import 'package:CanteenX/configs/app_dimensions.dart';
+import 'package:CanteenX/configs/app_typography.dart';
+import 'package:CanteenX/configs/space.dart';
+import 'package:CanteenX/core/constants/assets.dart';
+import 'package:CanteenX/core/constants/colors.dart';
+import 'package:CanteenX/core/functions/calculate_total_price.dart';
+import 'package:CanteenX/core/router/router.dart';
+import 'package:CanteenX/models/restaurant.dart';
+import 'package:CanteenX/presentation/widgets/custom_appbar.dart';
+import 'package:CanteenX/presentation/widgets/custom_buttons.dart';
+import 'package:CanteenX/presentation/widgets/empty_screen.dart';
+import 'package:CanteenX/presentation/widgets/pickup_item.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:garcon/application/application.dart';
-import 'package:garcon/configs/configs.dart';
-import 'package:garcon/core/core.dart';
-import 'package:garcon/models/restaurant.dart';
-import 'package:garcon/presentation/widgets.dart';
 
 class CartScreen extends StatefulWidget {
   const CartScreen({

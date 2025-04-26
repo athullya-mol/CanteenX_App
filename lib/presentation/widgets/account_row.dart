@@ -1,6 +1,6 @@
+import 'package:CanteenX/configs/app_typography.dart';
+import 'package:CanteenX/core/constants/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:garcon/configs/app_typography.dart';
-import 'package:garcon/core/constants/colors.dart';
 
 Widget accountRow({
   required String title,

@@ -1,8 +1,9 @@
+import 'package:CanteenX/application/blocs/privacy/privacy_bloc.dart';
+import 'package:CanteenX/configs/app_typography.dart';
+import 'package:CanteenX/configs/space.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:garcon/configs/configs.dart';
-import 'package:garcon/core/core.dart';
-import 'package:garcon/application/application.dart';
+import 'package:CanteenX/core/extensions/extensions.dart';
 import '../widgets.dart';
 
 class PrivacyScreen extends StatefulWidget {
@@ -44,7 +45,8 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
                 children: [
                   Space.yf(1.5),
                   Text(
-                    StringCapitalizeExtension(state.privacy.header1).capitalize(),
+                    StringCapitalizeExtension(state.privacy.header1)
+                        .capitalize(),
                     style: AppText.h3b?.copyWith(height: 2),
                   ),
                   verseText(
@@ -53,7 +55,8 @@ class _PrivacyScreenState extends State<PrivacyScreen> {
                   ),
                   Space.yf(1.5),
                   Text(
-                    StringCapitalizeExtension(state.privacy.header2).capitalize(),
+                    StringCapitalizeExtension(state.privacy.header2)
+                        .capitalize(),
                     style: AppText.h3b?.copyWith(height: 2),
                   ),
                   verseText(

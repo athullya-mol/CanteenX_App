@@ -1,13 +1,24 @@
 // ignore_for_file: use_build_context_synchronously, deprecated_member_use
 
+import 'package:CanteenX/application/cubits/cart/cart_cubit.dart';
+import 'package:CanteenX/application/cubits/payment/payment_cubit.dart';
+import 'package:CanteenX/application/cubits/place_order/place_order_cubit.dart';
+import 'package:CanteenX/configs/app_dimensions.dart';
+import 'package:CanteenX/configs/app_typography.dart';
+import 'package:CanteenX/configs/space.dart';
+import 'package:CanteenX/core/constants/colors.dart';
+import 'package:CanteenX/core/functions/convert_currency.dart';
+import 'package:CanteenX/core/router/router.dart';
+import 'package:CanteenX/core/validator/validator.dart';
+import 'package:CanteenX/models/pickupsorder.dart';
+import 'package:CanteenX/models/restaurant.dart';
+import 'package:CanteenX/presentation/widgets/custom_appbar.dart';
+import 'package:CanteenX/presentation/widgets/custom_buttons.dart';
+import 'package:CanteenX/presentation/widgets/custom_textfield.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:garcon/application/application.dart';
-import 'package:garcon/configs/configs.dart';
-import 'package:garcon/core/core.dart';
-import 'package:garcon/models/models.dart';
-import 'package:garcon/presentation/widgets.dart';
+import 'package:CanteenX/core/extensions/extensions.dart';
 
 class PickupsCheckout extends StatefulWidget {
   const PickupsCheckout({
@@ -28,7 +39,7 @@ class PickupsCheckout extends StatefulWidget {
 class _PickupsCheckoutState extends State<PickupsCheckout> {
   final TextEditingController _nameController = TextEditingController();
   List<String> dropDownItems = [];
-  String dropDownValue = "Select Branch";
+  String dropDownValue = "Select Counter";
   TimeOfDay selectedTime = TimeOfDay.now();
   Validators validators = Validators();
 
@@ -46,7 +57,7 @@ class _PickupsCheckoutState extends State<PickupsCheckout> {
 
   @override
   void initState() {
-    dropDownItems = ["Select Branch", ...widget.restaurant.branches];
+    dropDownItems = ["Select Counter", ...widget.restaurant.branches];
     super.initState();
   }
 
@@ -109,7 +120,8 @@ class _PickupsCheckoutState extends State<PickupsCheckout> {
                   children: [
                     Space.yf(1.5),
                     Text(
-                      StringCapitalizeExtension(widget.restaurant.name).capitalize(),
+                      StringCapitalizeExtension(widget.restaurant.name)
+                          .capitalize(),
                       style: AppText.h2b,
                     ),
                     Space.yf(.1),
@@ -130,7 +142,7 @@ class _PickupsCheckoutState extends State<PickupsCheckout> {
                     ),
                     Space.yf(1.5),
                     Text(
-                      "Restaurant Branch",
+                      "Canteen Counter",
                       style: AppText.b1b,
                     ),
                     Space.yf(.5),

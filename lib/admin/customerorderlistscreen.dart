@@ -1,8 +1,8 @@
+import 'package:CanteenX/models/reservation.dart';
+import 'package:CanteenX/presentation/screens/choose.dart';
+import 'package:CanteenX/presentation/widgets/home_components.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:garcon/models/reservation.dart';
-import 'package:garcon/presentation/screens/choose.dart';
-import 'package:garcon/presentation/widgets/home_components.dart';
 
 class CustomerOrderListScreen extends StatelessWidget {
   const CustomerOrderListScreen({Key? key}) : super(key: key);
@@ -87,21 +87,25 @@ class CustomerOrderListScreen extends StatelessWidget {
                               style:
                                   const TextStyle(fontWeight: FontWeight.bold)),
                           ElevatedButton(
-                            onPressed: () {
-                              final newStatus = res.status == 'Pending'
-                                  ? 'Accepted'
-                                  : 'Pending';
-                              updateReservationStatus(docId, newStatus);
-                            },
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: res.status == 'Accepted'
-                                  ? Colors.green
-                                  : Colors.red,
-                            ),
-                            child: Text(res.status == 'Accepted'
-                                ? 'Mark as Pending'
-                                : 'Mark as Accepted'),
-                          ),
+                              onPressed: () {
+                                final newStatus = res.status == 'Pending'
+                                    ? 'Accepted'
+                                    : 'Pending';
+                                updateReservationStatus(docId, newStatus);
+                              },
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: res.status == 'Accepted'
+                                    ? Colors.green
+                                    : Colors.red,
+                              ),
+                              child: Text(
+                                res.status == 'Accepted'
+                                    ? 'Accepted'
+                                    : 'Accept',
+                                style: const TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w700),
+                              )),
                         ],
                       ),
                     ],

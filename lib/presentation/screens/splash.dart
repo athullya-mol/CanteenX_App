@@ -1,8 +1,9 @@
 // ignore_for_file: use_build_context_synchronously
 
+import 'package:CanteenX/configs/app.dart';
+import 'package:CanteenX/configs/app_dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:garcon/configs/configs.dart';
 
 import '../../core/core.dart';
 
@@ -17,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void _nextScreen() {
     Future.delayed(const Duration(seconds: 1), () {
       Navigator.of(context).pushNamedAndRemoveUntil(
-        AppRouter.choose,//ads replaced by choose
+        AppRouter.choose, //ads replaced by choose
         (route) => false,
       );
     });

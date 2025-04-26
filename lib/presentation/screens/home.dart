@@ -1,10 +1,15 @@
+import 'package:CanteenX/application/blocs/restaurants/restaurants_bloc.dart';
+import 'package:CanteenX/configs/app_dimensions.dart';
+import 'package:CanteenX/configs/space.dart';
+import 'package:CanteenX/core/constants/assets.dart';
+import 'package:CanteenX/core/constants/colors.dart';
+import 'package:CanteenX/presentation/screens/chatbot_ai.dart';
+import 'package:CanteenX/presentation/widgets/dots_indicator.dart';
+import 'package:CanteenX/presentation/widgets/home_components.dart';
+import 'package:CanteenX/presentation/widgets/horizontal_restaurant_item.dart';
+import 'package:CanteenX/presentation/widgets/vertical_restaurant_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:garcon/application/application.dart';
-import 'package:garcon/configs/configs.dart';
-import 'package:garcon/core/core.dart';
-import 'package:garcon/presentation/screens/chatbot_ai.dart';
-import 'package:garcon/presentation/widgets.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

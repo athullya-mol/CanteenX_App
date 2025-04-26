@@ -1,8 +1,12 @@
+import 'package:CanteenX/configs/app_dimensions.dart';
+import 'package:CanteenX/configs/app_typography.dart';
+import 'package:CanteenX/configs/space.dart';
+import 'package:CanteenX/core/constants/colors.dart';
+import 'package:CanteenX/core/router/router.dart';
+import 'package:CanteenX/models/restaurant.dart';
+import 'package:CanteenX/core/extensions/extensions.dart';
+import 'package:CanteenX/presentation/widgets/home_components.dart';
 import 'package:flutter/material.dart';
-import 'package:garcon/configs/configs.dart';
-import 'package:garcon/core/core.dart';
-import 'package:garcon/models/models.dart';
-import 'package:garcon/presentation/widgets.dart';
 
 Widget horizontalRestaurantItem(Restaurant restaurant, BuildContext context) {
   return Column(

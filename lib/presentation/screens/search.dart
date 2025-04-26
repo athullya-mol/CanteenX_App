@@ -1,10 +1,13 @@
+import 'package:CanteenX/application/blocs/restaurants/restaurants_bloc.dart';
+import 'package:CanteenX/application/cubits/search/search_cubit.dart';
+import 'package:CanteenX/configs/app_dimensions.dart';
+import 'package:CanteenX/configs/app_typography.dart';
+import 'package:CanteenX/configs/space.dart';
+import 'package:CanteenX/presentation/widgets/custom_appbar.dart';
+import 'package:CanteenX/presentation/widgets/custom_textfield.dart';
+import 'package:CanteenX/presentation/widgets/vertical_restaurant_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:garcon/application/application.dart';
-import 'package:garcon/configs/app_dimensions.dart';
-import 'package:garcon/configs/app_typography.dart';
-import 'package:garcon/configs/space.dart';
-import 'package:garcon/presentation/widgets.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
@@ -77,13 +80,13 @@ class _SearchScreenState extends State<SearchScreen> {
                     ],
                   );
                 } else {
-                   return Padding(
-                     padding: Space.hf(1.5),
-                     child: Text(
+                  return Padding(
+                    padding: Space.hf(1.5),
+                    child: Text(
                       "No Result Found for \"${_searchController.text}\"",
                       style: AppText.h3,
-                                       ),
-                   );
+                    ),
+                  );
                 }
               },
             )

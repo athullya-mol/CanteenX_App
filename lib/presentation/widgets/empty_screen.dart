@@ -1,6 +1,7 @@
+import 'package:CanteenX/configs/app_typography.dart';
+import 'package:CanteenX/configs/space.dart';
+import 'package:CanteenX/core/constants/colors.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:garcon/core/core.dart';
-import 'package:garcon/configs/configs.dart';
 import "package:flutter/material.dart";
 
 Widget emptyScreen({

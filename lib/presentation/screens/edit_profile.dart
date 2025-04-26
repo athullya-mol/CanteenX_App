@@ -1,12 +1,16 @@
 import 'dart:developer';
 
+import 'package:CanteenX/application/blocs/user/user_bloc.dart';
+import 'package:CanteenX/configs/app_dimensions.dart';
+import 'package:CanteenX/configs/app_typography.dart';
+import 'package:CanteenX/configs/space.dart';
+import 'package:CanteenX/presentation/widgets/custom_appbar.dart';
+import 'package:CanteenX/presentation/widgets/custom_buttons.dart';
+import 'package:CanteenX/presentation/widgets/custom_dialog.dart';
+import 'package:CanteenX/presentation/widgets/custom_textfield.dart';
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:garcon/application/application.dart';
-import 'package:garcon/configs/configs.dart';
-import 'package:garcon/presentation/widgets.dart';
-
 import '../../core/core.dart';
 import '../../models/models.dart';
 

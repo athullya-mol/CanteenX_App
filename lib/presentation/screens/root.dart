@@ -1,10 +1,15 @@
+import 'package:CanteenX/application/cubits/navigation_cubit/navigation_cubit.dart';
+import 'package:CanteenX/configs/app_typography.dart';
+import 'package:CanteenX/core/constants/assets.dart';
+import 'package:CanteenX/core/constants/colors.dart';
+import 'package:CanteenX/core/enums/enums.dart';
+import 'package:CanteenX/presentation/screens/account.dart';
+import 'package:CanteenX/presentation/screens/home.dart';
+import 'package:CanteenX/presentation/screens/reservations.dart';
+import 'package:CanteenX/presentation/screens/settings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:garcon/application/application.dart';
-import 'package:garcon/configs/configs.dart';
-import 'package:garcon/core/core.dart';
-import 'package:garcon/presentation/screens.dart';
 
 class RootScreen extends StatefulWidget {
   const RootScreen({

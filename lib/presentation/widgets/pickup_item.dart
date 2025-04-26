@@ -1,17 +1,17 @@
+import 'package:CanteenX/application/cubits/cart/cart_cubit.dart';
+import 'package:CanteenX/core/constants/colors.dart';
+import 'package:CanteenX/core/extensions/extensions.dart';
+import 'package:CanteenX/models/pickup.dart';
+import 'package:CanteenX/presentation/widgets/restaurant_components.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:garcon/application/application.dart';
-import 'package:garcon/core/core.dart';
-import 'package:garcon/models/pickup.dart';
-import 'package:garcon/presentation/widgets.dart';
 
 import '../../configs/configs.dart';
 
 Widget pickupItem({
   required BuildContext context,
   required PickUp pickUp,
-
 }) {
   return Stack(
     children: [
@@ -67,13 +67,12 @@ Widget pickupItem({
         child: GestureDetector(
           onTap: () {
             context.read<CartCubit>().toggleCartItem(
-              FirebaseAuth.instance.currentUser!.uid,
-              pickUp,
-            );
+                  FirebaseAuth.instance.currentUser!.uid,
+                  pickUp,
+                );
             context.read<CartCubit>().loadCart(
-              FirebaseAuth.instance.currentUser!.uid,
-
-            );
+                  FirebaseAuth.instance.currentUser!.uid,
+                );
           },
           child: Container(
             height: AppDimensions.normalize(10),
@@ -92,20 +91,19 @@ Widget pickupItem({
             child: Center(
               child: BlocBuilder<CartCubit, CartState>(
                 builder: (context, state) {
-                  if(state is CartLoaded){
-                    final isInCart = state.pickUps.any((pickup) =>
-                    pickup.id == pickUp.id);
+                  if (state is CartLoaded) {
+                    final isInCart =
+                        state.pickUps.any((pickup) => pickUp.id == pickUp.id);
                     return Icon(
                       isInCart ? Icons.check : Icons.add,
                       color: Colors.white,
                     );
-                  }else{
+                  } else {
                     return const Icon(
                       Icons.add,
                       color: Colors.white,
                     );
                   }
-
                 },
               ),
             ),

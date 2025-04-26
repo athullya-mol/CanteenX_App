@@ -1,9 +1,13 @@
+import 'package:CanteenX/configs/app_dimensions.dart';
+import 'package:CanteenX/configs/app_typography.dart';
+import 'package:CanteenX/configs/space.dart';
+import 'package:CanteenX/core/constants/assets.dart';
+import 'package:CanteenX/core/extensions/extensions.dart';
+import 'package:CanteenX/core/router/router.dart';
+import 'package:CanteenX/models/restaurant.dart';
+import 'package:CanteenX/presentation/widgets/home_components.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:garcon/configs/configs.dart';
-import 'package:garcon/core/core.dart';
-import 'package:garcon/models/models.dart';
-import 'package:garcon/presentation/widgets/home_components.dart';
 
 Widget verticalRestaurantItem(Restaurant restaurant, BuildContext context) {
   return GestureDetector(

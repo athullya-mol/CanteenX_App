@@ -1,8 +1,12 @@
+import 'package:CanteenX/application/cubits/get_orders/get_orders_cubit.dart';
+import 'package:CanteenX/application/cubits/get_reservations/get_reservation_cubit.dart';
+import 'package:CanteenX/application/cubits/selected_tap/selected_tap_cubit.dart';
+import 'package:CanteenX/presentation/widgets/custom_appbar.dart';
+import 'package:CanteenX/presentation/widgets/preorders_view.dart';
+import 'package:CanteenX/presentation/widgets/reservasions_view.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:garcon/application/application.dart';
-import 'package:garcon/presentation/widgets.dart';
 import '../../configs/configs.dart';
 import '../../core/core.dart';
 

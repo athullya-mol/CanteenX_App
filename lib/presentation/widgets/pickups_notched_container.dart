@@ -1,7 +1,7 @@
+import 'package:CanteenX/application/cubits/cart/cart_cubit.dart';
+import 'package:CanteenX/models/restaurant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:garcon/application/application.dart';
-import 'package:garcon/models/restaurant.dart';
 
 import '../../configs/configs.dart';
 import '../../core/core.dart';

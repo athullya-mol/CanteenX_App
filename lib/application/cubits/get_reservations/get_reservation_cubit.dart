@@ -1,8 +1,8 @@
+import 'package:CanteenX/repositories/reservation/reservation_repo.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../models/models.dart';
-import 'package:garcon/repositories/repositories.dart';
 
 part 'get_reservations_state.dart';
 

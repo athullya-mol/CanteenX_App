@@ -1,12 +1,18 @@
+import 'package:CanteenX/admin/admin_root.dart';
+import 'package:CanteenX/admin/admin_signin.dart';
+import 'package:CanteenX/admin/feedbackadmin.dart';
+import 'package:CanteenX/models/reservation.dart';
+import 'package:CanteenX/models/restaurant.dart';
+import 'package:CanteenX/models/user.dart';
+import 'package:CanteenX/presentation/screens/feedbackform.dart';
 import 'package:flutter/material.dart';
-import 'package:garcon/admin/admin_root.dart';
-import 'package:garcon/admin/admin_signin.dart';
-import 'package:garcon/models/models.dart';
 import '../../presentation/screens.dart';
 import '../core.dart';
 
 sealed class AppRouter {
   static const String splash = '/';
+  static const String userfeed = '/feedbackform';
+  static const String adminfeed = '/feedbackadmin';
   static const String ads = '/ads';
   static const String root = '/root';
   static const String adminroot = '/admin_root';
@@ -77,6 +83,10 @@ sealed class AppRouter {
         CurrentUser currentUser = routeSettings.arguments as CurrentUser;
         return MaterialPageRoute(
             builder: (_) => EditProfileScreen(currentUser: currentUser));
+      case userfeed:
+        return MaterialPageRoute(builder: (_) => const FeedbackForm());
+      case adminfeed:
+        return MaterialPageRoute(builder: (_) => const FeedbackAdminPanel());
       case changePassword:
         return MaterialPageRoute(builder: (_) => const ChangePasswordScreen());
       case filteredRestaurants:

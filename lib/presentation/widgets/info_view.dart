@@ -1,8 +1,14 @@
+import 'package:CanteenX/configs/app_dimensions.dart';
+import 'package:CanteenX/configs/app_typography.dart';
+import 'package:CanteenX/configs/space.dart';
+import 'package:CanteenX/core/constants/assets.dart';
+import 'package:CanteenX/core/constants/colors.dart';
+import 'package:CanteenX/core/constants/strings.dart';
+import 'package:CanteenX/core/functions/url_launcher.dart';
+import 'package:CanteenX/core/extensions/extensions.dart';
+import 'package:CanteenX/models/restaurant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:garcon/configs/configs.dart';
-import 'package:garcon/core/core.dart';
-import 'package:garcon/models/models.dart';
 
 class InfoView extends StatelessWidget {
   const InfoView({super.key, required this.restaurant});
@@ -123,7 +129,7 @@ class InfoView extends StatelessWidget {
               ),
               GestureDetector(
                   onTap: () async {
-                    await UrlFunctions.openUrl(AppStrings.linkedUrl);
+                    await UrlFunctions.openUrl(AppStrings.gitUrl);
                   },
                   child: SvgPicture.asset(AppAssets.instagram)),
             ],

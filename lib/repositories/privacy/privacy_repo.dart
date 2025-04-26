@@ -1,5 +1,5 @@
+import 'package:CanteenX/models/info.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:garcon/models/info.dart';
 part 'base_privacy_repo.dart';
 
 class PrivacyRepository extends BasePrivacyRepository {

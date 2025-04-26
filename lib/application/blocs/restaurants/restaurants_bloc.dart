@@ -1,8 +1,8 @@
 import 'dart:async';
 
+import 'package:CanteenX/models/restaurant.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:garcon/models/models.dart';
 
 import 'package:flutter/material.dart';
 
@@ -11,7 +11,6 @@ import '../../../repositories/restaurants/restaurants_repo.dart';
 part 'restaurants_event.dart';
 
 part 'restaurants_state.dart';
-
 
 class RestaurantsBloc extends Bloc<RestaurantsEvent, RestaurantsState> {
   final BaseRestaurantsRepository _restaurantsRepository;

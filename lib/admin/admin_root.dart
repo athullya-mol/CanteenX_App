@@ -1,13 +1,15 @@
+import 'package:CanteenX/admin/addfoodmenuscreen.dart';
+import 'package:CanteenX/admin/customerorderlistscreen.dart';
+import 'package:CanteenX/admin/deletemenuscreen.dart';
+import 'package:CanteenX/admin/salesreportscreen.dart';
+import 'package:CanteenX/application/cubits/navigation_cubit/admin_navigation_cubit.dart';
+import 'package:CanteenX/configs/app_typography.dart';
+import 'package:CanteenX/core/constants/assets.dart';
+import 'package:CanteenX/core/constants/colors.dart';
+import 'package:CanteenX/core/enums/enums.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:garcon/admin/addfoodmenuscreen.dart';
-import 'package:garcon/admin/customerorderlistscreen.dart';
-import 'package:garcon/admin/deletemenuscreen.dart';
-import 'package:garcon/admin/salesreportscreen.dart';
-import 'package:garcon/application/cubits/navigation_cubit/admin_navigation_cubit.dart';
-import 'package:garcon/configs/configs.dart';
-import 'package:garcon/core/core.dart';
 
 class AdminRootScreen extends StatefulWidget {
   const AdminRootScreen({

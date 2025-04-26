@@ -1,8 +1,10 @@
+import 'package:CanteenX/application/cubits/get_orders/get_orders_cubit.dart';
+import 'package:CanteenX/core/constants/assets.dart';
+import 'package:CanteenX/presentation/widgets/empty_screen.dart';
+import 'package:CanteenX/presentation/widgets/preorder_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:garcon/application/application.dart';
-import 'package:garcon/presentation/widgets.dart';
-import 'package:garcon/core/core.dart';
+
 import '../../configs/configs.dart';
 
 class PreOrdersView extends StatelessWidget {
