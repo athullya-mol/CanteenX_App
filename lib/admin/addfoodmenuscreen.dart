@@ -26,6 +26,7 @@ class _AddFoodMenuScreenState extends State<AddFoodMenuScreen> {
   final TextEditingController _pickupsController = TextEditingController();
   final TextEditingController _branchesController = TextEditingController();
   final TextEditingController _reservationController = TextEditingController();
+  final TextEditingController _priceController = TextEditingController();
   bool _isLoading = false;
 
   File? _selectedImage;
@@ -77,6 +78,7 @@ class _AddFoodMenuScreenState extends State<AddFoodMenuScreen> {
           'pickups': _pickupsController.text.trim().split(','),
           'branches': _branchesController.text.trim().split(','),
           'reservation': _reservationController.text.trim(),
+          'price': _priceController.text.trim(),
           'createdAt': FieldValue.serverTimestamp(),
         };
 
@@ -95,6 +97,7 @@ class _AddFoodMenuScreenState extends State<AddFoodMenuScreen> {
         _pickupsController.clear();
         _branchesController.clear();
         _reservationController.clear();
+        _priceController.clear();
         setState(() {
           _selectedImage = null;
         });
@@ -188,6 +191,13 @@ class _AddFoodMenuScreenState extends State<AddFoodMenuScreen> {
                 TextFormField(
                   controller: _reservationController,
                   decoration: const InputDecoration(labelText: 'Reservation'),
+                ),
+                TextFormField(
+                  controller: _priceController,
+                  decoration: const InputDecoration(labelText: 'Price'),
+                  keyboardType: TextInputType.number,
+                  validator: (value) =>
+                      value == null || value.isEmpty ? 'Enter price' : null,
                 ),
                 Space.yf(2.5),
                 customElevatedButton(

@@ -12,6 +12,7 @@ class Restaurant extends Equatable {
   final List<dynamic> pickups;
   final List<dynamic> branches;
   final String reservation;
+  final String price;
 
   const Restaurant({
     required this.id,
@@ -24,6 +25,7 @@ class Restaurant extends Equatable {
     required this.pickups,
     required this.branches,
     required this.reservation,
+    required this.price,
   });
 
   /// Factory constructor to create a Restaurant from a Firestore DocumentSnapshot
@@ -41,6 +43,7 @@ class Restaurant extends Equatable {
       pickups: data?['pickups'] ?? [],
       branches: data?['branches'] ?? [],
       reservation: data?['reservation'] ?? '',
+      price: data?['price'] ?? '0',
     );
   }
 
@@ -57,5 +60,6 @@ class Restaurant extends Equatable {
         pickups,
         branches,
         reservation,
+        price,
       ];
 }

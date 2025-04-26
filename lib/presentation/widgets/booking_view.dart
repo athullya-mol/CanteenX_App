@@ -226,7 +226,8 @@ class _BookingViewState extends State<BookingView> {
             ],
           ),
         ),
-        reservationAmountColumn(widget.restaurant.reservation.toString()),
+        reservationAmountColumn(
+            widget.restaurant.price.toString(), numberOfPersons),
         customElevatedButton(
             width: double.infinity,
             height: AppDimensions.normalize(24),
@@ -242,7 +243,7 @@ class _BookingViewState extends State<BookingView> {
                   name: _nameController.text,
                   branch: dropDownValue.toString(),
                   restaurant: widget.restaurant.name,
-                  amount: widget.restaurant.reservation,
+                  amount: widget.restaurant.price * numberOfPersons,
                   date: selectedDate.toString().substring(0, 10),
                   status: 'Pending');
 

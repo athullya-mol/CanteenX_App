@@ -61,7 +61,10 @@ Widget pickupCachedNetworkImage(String image) {
   );
 }
 
-Widget reservationAmountColumn(String amount) {
+Widget reservationAmountColumn(String amount, int people) {
+  double price = double.tryParse(amount) ?? 0.0;
+  double total = price * people;
+
   return Column(
     children: [
       Space.yf(1.5),
@@ -71,7 +74,7 @@ Widget reservationAmountColumn(String amount) {
       ),
       Space.yf(.5),
       Text(
-        "$amount KWD",
+        "$total INR",
         style: AppText.h1b?.copyWith(color: AppColors.deepRed),
       ),
       Space.yf(2),
@@ -94,7 +97,7 @@ Widget bookingFooter() {
           SizedBox(
             width: AppDimensions.normalize(115),
             child: const Text(
-              "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est eopksio laborum.",
+              "Once the order is placed, it cannot be cancelled or modified. Make sure to double-check your selected items, quantity, and pickup time.",
               overflow: TextOverflow.ellipsis,
               maxLines: 3,
             ),
