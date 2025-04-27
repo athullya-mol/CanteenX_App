@@ -71,6 +71,8 @@ class _BookingViewState extends State<BookingView> {
 
   @override
   Widget build(BuildContext context) {
+double pricePerPerson = double.tryParse(widget.restaurant.price) ?? 0.0;
+    double totalPrice = pricePerPerson * numberOfPersons;
     return Column(
       children: [
         Padding(
@@ -226,8 +228,7 @@ class _BookingViewState extends State<BookingView> {
             ],
           ),
         ),
-        reservationAmountColumn(
-            widget.restaurant.price.toString(), numberOfPersons),
+        reservationAmountColumn(totalPrice),
         customElevatedButton(
             width: double.infinity,
             height: AppDimensions.normalize(24),
@@ -243,7 +244,7 @@ class _BookingViewState extends State<BookingView> {
                   name: _nameController.text,
                   branch: dropDownValue.toString(),
                   restaurant: widget.restaurant.name,
-                  amount: widget.restaurant.price * numberOfPersons,
+                  amount: totalPrice.toStringAsFixed(2),
                   date: selectedDate.toString().substring(0, 10),
                   status: 'Pending');
 

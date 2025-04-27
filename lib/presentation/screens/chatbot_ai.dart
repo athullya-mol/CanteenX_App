@@ -1,4 +1,7 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:http/http.dart' as http;
 
 class ChatBotScreen extends StatefulWidget {
   const ChatBotScreen({super.key});
@@ -11,23 +14,97 @@ class _ChatBotScreenState extends State<ChatBotScreen> {
   final TextEditingController _controller = TextEditingController();
   final List<Map<String, String>> _messages = [];
 
-  void _sendMessage() {
+  Future<void> _sendMessage() async {
     String input = _controller.text.trim();
     if (input.isEmpty) return;
 
     setState(() {
       _messages.add({'sender': 'user', 'message': input});
-      _messages.add({'sender': 'bot', 'message': _getBotResponse(input)});
-      _controller.clear();
     });
+
+    _controller.clear();
+
+    if (_isMenuRequest(input)) {
+      await _fetchAndDisplayMenu();
+    } else {
+      String botResponse = await _getBotResponse(input);
+
+      setState(() {
+        _messages.add({'sender': 'bot', 'message': botResponse});
+      });
+    }
   }
 
-  String _getBotResponse(String message) {
-    message = message.toLowerCase();
-    if (message.contains("hello")) return "Hi there!";
-    if (message.contains("how are you")) return "I'm just code, but I'm good!";
-    if (message.contains("bye")) return "Goodbye!";
-    return "Sorry, I didn't understand that.";
+  bool _isMenuRequest(String input) {
+    final lowerInput = input.toLowerCase();
+    return lowerInput.contains('menu') ||
+        lowerInput.contains('food') ||
+        lowerInput.contains('dishes');
+  }
+
+  Future<void> _fetchAndDisplayMenu() async {
+    try {
+      final snapshot =
+          await FirebaseFirestore.instance.collection('restaurants').get();
+      final dishes = snapshot.docs.map((doc) => doc.data()).toList();
+
+      if (dishes.isEmpty) {
+        setState(() {
+          _messages.add({
+            'sender': 'bot',
+            'message': 'No dishes are currently available.'
+          });
+        });
+      } else {
+        final dishList = dishes
+            .map((dish) => '${dish['name']} - ₹${dish['price'] ?? 'N/A'}')
+            .join('\n');
+        setState(() {
+          _messages.add({
+            'sender': 'bot',
+            'message': 'Here are the available dishes:\n$dishList'
+          });
+        });
+      }
+    } catch (e) {
+      setState(() {
+        _messages.add({
+          'sender': 'bot',
+          'message': 'Failed to fetch menu: ${e.toString()}'
+        });
+      });
+    }
+  }
+
+  Future<String> _getBotResponse(String userMessage) async {
+    const apiKey =
+        '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';
+    const url = 'https://openrouter.ai/api/v1/chat/completions';
+
+    try {
+      final response = await http.post(
+        Uri.parse(url),
+        headers: {
+          'Authorization': 'Bearer $apiKey',
+          'Content-Type': 'application/json',
+        },
+        body: jsonEncode({
+          "model": "gpt-3.5-turbo",
+          "messages": [
+            {"role": "user", "content": userMessage}
+          ]
+        }),
+      );
+
+      if (response.statusCode == 200) {
+        final data = jsonDecode(response.body);
+        return data['choices'][0]['message']['content'].trim();
+      } else {
+        return "Error: ${response.statusCode}";
+      }
+    } catch (e) {
+      return "Error contacting server.";
+    }
   }
 
   @override

@@ -79,73 +79,76 @@ class _FeedbackFormState extends State<FeedbackForm> {
         ),
         title: trendingTitle("Submit Feedback"),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Form(
-          key: _formKey,
-          child: Column(
-            children: [
-              TextFormField(
-                controller: _nameController,
-                decoration: const InputDecoration(labelText: 'Your Name'),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter your name';
-                  }
-                  return null;
-                },
-              ),
-              Space.yf(1.5),
-              TextFormField(
-                controller: _emailController,
-                decoration: const InputDecoration(labelText: 'Your Email'),
-                keyboardType: TextInputType.emailAddress,
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter your email';
-                  }
-                  // Basic email validation
-                  if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
-                    return 'Please enter a valid email address';
-                  }
-                  return null;
-                },
-              ),
-              Space.yf(1.5),
-              TextFormField(
-                controller: _subjectController,
-                decoration: const InputDecoration(labelText: 'Subject'),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter a subject';
-                  }
-                  return null;
-                },
-              ),
-              Space.yf(1.5),
-              TextFormField(
-                controller: _feedbackController,
-                decoration: const InputDecoration(labelText: 'Your Feedback'),
-                maxLines: 4,
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter your feedback';
-                  }
-                  return null;
-                },
-              ),
-              Space.yf(2.5),
-              customElevatedButton(
-                width: double.infinity,
-                height: AppDimensions.normalize(20),
-                color: AppColors.deepRed,
-                borderRadius: AppDimensions.normalize(5),
-                text:
-                    !_isLoading ? "Submit".toUpperCase() : "Wait".toUpperCase(),
-                textStyle: AppText.h3b!.copyWith(color: Colors.white),
-                onPressed: _isLoading ? null : _submitFeedback,
-              )
-            ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Form(
+            key: _formKey,
+            child: Column(
+              children: [
+                TextFormField(
+                  controller: _nameController,
+                  decoration: const InputDecoration(labelText: 'Your Name'),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your name';
+                    }
+                    return null;
+                  },
+                ),
+                Space.yf(1.5),
+                TextFormField(
+                  controller: _emailController,
+                  decoration: const InputDecoration(labelText: 'Your Email'),
+                  keyboardType: TextInputType.emailAddress,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your email';
+                    }
+                    // Basic email validation
+                    if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
+                      return 'Please enter a valid email address';
+                    }
+                    return null;
+                  },
+                ),
+                Space.yf(1.5),
+                TextFormField(
+                  controller: _subjectController,
+                  decoration: const InputDecoration(labelText: 'Subject'),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter a subject';
+                    }
+                    return null;
+                  },
+                ),
+                Space.yf(1.5),
+                TextFormField(
+                  controller: _feedbackController,
+                  decoration: const InputDecoration(labelText: 'Your Feedback'),
+                  maxLines: 4,
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your feedback';
+                    }
+                    return null;
+                  },
+                ),
+                Space.yf(2.5),
+                customElevatedButton(
+                  width: double.infinity,
+                  height: AppDimensions.normalize(20),
+                  color: AppColors.deepRed,
+                  borderRadius: AppDimensions.normalize(5),
+                  text: !_isLoading
+                      ? "Submit".toUpperCase()
+                      : "Wait".toUpperCase(),
+                  textStyle: AppText.h3b!.copyWith(color: Colors.white),
+                  onPressed: _isLoading ? null : _submitFeedback,
+                )
+              ],
+            ),
           ),
         ),
       ),

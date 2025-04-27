@@ -4,12 +4,10 @@ import 'package:CanteenX/admin/deletemenuscreen.dart';
 import 'package:CanteenX/admin/salesreportscreen.dart';
 import 'package:CanteenX/application/cubits/navigation_cubit/admin_navigation_cubit.dart';
 import 'package:CanteenX/configs/app_typography.dart';
-import 'package:CanteenX/core/constants/assets.dart';
 import 'package:CanteenX/core/constants/colors.dart';
 import 'package:CanteenX/core/enums/enums.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class AdminRootScreen extends StatefulWidget {
   const AdminRootScreen({
@@ -59,47 +57,28 @@ class _AdminRootScreenState extends State<AdminRootScreen> {
         builder: (context, activeTab) {
           return BottomNavigationBar(
             type: BottomNavigationBarType.fixed,
-            items: <BottomNavigationBarItem>[
+            items: const <BottomNavigationBarItem>[
               BottomNavigationBarItem(
-                icon: SvgPicture.asset(AppAssets.home),
+                icon: Icon(Icons.playlist_add, size: 28),
                 label: 'Add Menu',
-                activeIcon: SvgPicture.asset(
-                  AppAssets.home,
-                  colorFilter: const ColorFilter.mode(
-                      AppColors.deepRed, BlendMode.srcIn),
-                ),
               ),
               BottomNavigationBarItem(
-                icon: SvgPicture.asset(AppAssets.reservations),
+                icon: Icon(Icons.delete_sweep_outlined),
                 label: 'Delete Menu',
-                activeIcon: SvgPicture.asset(
-                  AppAssets.reservations,
-                  colorFilter: const ColorFilter.mode(
-                      AppColors.deepRed, BlendMode.srcIn),
-                ),
               ),
               BottomNavigationBarItem(
-                icon: SvgPicture.asset(AppAssets.account),
+                icon: Icon(Icons.list_alt),
                 label: 'Orders',
-                activeIcon: SvgPicture.asset(
-                  AppAssets.account,
-                  colorFilter: const ColorFilter.mode(
-                      AppColors.deepRed, BlendMode.srcIn),
-                ),
               ),
               BottomNavigationBarItem(
-                icon: SvgPicture.asset(AppAssets.settings),
+                icon: Icon(Icons.all_inbox_rounded),
                 label: 'Reports',
-                activeIcon: SvgPicture.asset(
-                  AppAssets.settings,
-                  colorFilter: const ColorFilter.mode(
-                      AppColors.deepRed, BlendMode.srcIn),
-                ),
               ),
             ],
             currentIndex: activeTab.index,
             selectedLabelStyle: AppText.b1,
             selectedItemColor: AppColors.deepRed,
+            unselectedItemColor: Colors.grey,
             showUnselectedLabels: false,
             onTap: (index) {
               final newTab = AdminNavigationTab.values[index];

@@ -181,12 +181,12 @@ class _AddFoodMenuScreenState extends State<AddFoodMenuScreen> {
                 TextFormField(
                   controller: _pickupsController,
                   decoration: const InputDecoration(
-                      labelText: 'Pickups (comma separated)'),
+                      labelText: 'Pickup time (comma separated)'),
                 ),
                 TextFormField(
                   controller: _branchesController,
                   decoration: const InputDecoration(
-                      labelText: 'Branches (comma separated)'),
+                      labelText: 'Counters (comma separated)'),
                 ),
                 TextFormField(
                   controller: _reservationController,

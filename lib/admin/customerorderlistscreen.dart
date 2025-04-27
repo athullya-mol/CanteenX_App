@@ -1,3 +1,4 @@
+import 'package:CanteenX/core/constants/colors.dart';
 import 'package:CanteenX/models/reservation.dart';
 import 'package:CanteenX/presentation/screens/choose.dart';
 import 'package:CanteenX/presentation/widgets/home_components.dart';
@@ -95,8 +96,8 @@ class CustomerOrderListScreen extends StatelessWidget {
                               },
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: res.status == 'Accepted'
-                                    ? Colors.green
-                                    : Colors.red,
+                                    ? AppColors.deepGreen
+                                    : AppColors.deepRed,
                               ),
                               child: Text(
                                 res.status == 'Accepted'

@@ -61,10 +61,7 @@ Widget pickupCachedNetworkImage(String image) {
   );
 }
 
-Widget reservationAmountColumn(String amount, int people) {
-  double price = double.tryParse(amount) ?? 0.0;
-  double total = price * people;
-
+Widget reservationAmountColumn(double amount) {
   return Column(
     children: [
       Space.yf(1.5),
@@ -74,7 +71,7 @@ Widget reservationAmountColumn(String amount, int people) {
       ),
       Space.yf(.5),
       Text(
-        "$total INR",
+        "${amount.toStringAsFixed(2)} INR",
         style: AppText.h1b?.copyWith(color: AppColors.deepRed),
       ),
       Space.yf(2),

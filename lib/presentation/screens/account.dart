@@ -4,6 +4,7 @@ import 'package:CanteenX/configs/app_typography.dart';
 import 'package:CanteenX/configs/space.dart';
 import 'package:CanteenX/core/constants/colors.dart';
 import 'package:CanteenX/core/router/router.dart';
+import 'package:CanteenX/presentation/screens/feedbackform.dart';
 import 'package:CanteenX/presentation/widgets/account_row.dart';
 import 'package:CanteenX/presentation/widgets/custom_appbar.dart';
 import 'package:flag/flag_enum.dart';
@@ -80,7 +81,11 @@ class AccountScreen extends StatelessWidget {
                   accountRow(
                       title: "Feedback",
                       onTap: () {
-                        Navigator.of(context).pushNamed(AppRouter.userfeed);
+                        showModalBottomSheet(
+                          context: context,
+                          isScrollControlled: true,
+                          builder: (_) => const FeedbackForm(),
+                        );
                       }),
                 ],
               ),

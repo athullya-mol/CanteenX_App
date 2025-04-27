@@ -48,7 +48,6 @@ class FeedbackAdminPanel extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                 child: Card(
-                  color: Colors.blueGrey.shade50,
                   elevation: 3,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),

@@ -24,6 +24,7 @@ class ReservationCheckoutScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double totalPrice = double.tryParse(reservation.amount) ?? 0.0;
     pay() {
       context.read<AddReservationCubit>().addReservation(reservation).then(
             (value) =>
@@ -138,12 +139,12 @@ class ReservationCheckoutScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
                             Text(
-                              "Tawla Location:",
+                              "Counter:",
                               style: AppText.h3,
                             ),
                             Space.yf(.2),
                             Text(
-                              "Any",
+                              reservation.branch,
                               style: AppText.h3b,
                             )
                           ],
@@ -151,31 +152,11 @@ class ReservationCheckoutScreen extends StatelessWidget {
                       ],
                     ),
                     Space.yf(1.5),
-                    Text(
-                      "Occasion:",
-                      style: AppText.h3,
-                    ),
-                    Space.yf(.2),
-                    Text(
-                      "No Occasion",
-                      style: AppText.h3b,
-                    ),
-                    Space.yf(1.5),
-                    Text(
-                      "Special Request:",
-                      style: AppText.h3,
-                    ),
-                    Space.yf(.2),
-                    Text(
-                      "dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown.",
-                      style: AppText.b1,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                    ),
+                    bookingFooter(),
                   ],
                 ),
               ),
-              reservationAmountColumn("25", 0),
+              reservationAmountColumn(totalPrice),
               //  Space.y!,
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
